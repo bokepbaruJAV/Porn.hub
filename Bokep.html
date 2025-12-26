@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacked!</title>
+    <style>
+        body {
+            background-color: black;
+            color: green;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .terminal {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .text {
+            font-size: 1.5em;
+            text-align: center;
+            animation: blink 1s infinite;
+        }
+        .hacking-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text fill="green" font-size="10" x="50" y="50" text-anchor="middle">0101010101</text></svg>') repeat;
+            opacity: 0.1;
+            animation: scroll 5s linear infinite;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        @keyframes scroll {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100px); }
+        }
+        .warning {
+            color: red;
+            font-size: 2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hacking-effect"></div>
+    <div class="terminal">
+        <div class="text">
+            <p>Initializing hack sequence...</p>
+            <p>Accessing phone data...</p>
+            <p>Downloading contacts, photos, messages...</p>
+            <p>WARNING: Your phone is compromised!</p>
+        </div>
+        <div class="warning">
+            <p>HP Anda telah di-hack!</p>
+            <p>Semua data Anda sekarang milik saya.</p>
+            
+
+
+            <p>Bayar hutang mu heii😹!! ! </p>
+        </div>
+    </div>
+    <script>
+        // Efek suara sederhana (opsional, gunakan dengan hati-hati)
+        // const audio = new Audio('https://www.soundjay.com/misc/sounds/bell-ringing-05.wav');
+        // audio.play();
+
+        // Efek typing (simulasi)
+        const textElement = document.querySelector('.text');
+        const messages = [
+            "Initializing hack sequence...",
+            "Accessing phone data...",
+            "Downloading contacts, photos, messages...",
+            "WARNING: Your phone is compromised!"
+        ];
+        let index = 0;
+        function typeWriter() {
+            if (index < messages.length) {
+                textElement.innerHTML = messages[index];
+                index++;
+                setTimeout(typeWriter, 2000);
+            }
+        }
+        typeWriter();
+    </script>
+</body>
+</html>
